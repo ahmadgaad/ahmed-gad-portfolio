@@ -1,5 +1,1 @@
-hosp-1.png https://is1-ssl.mzstatic.com/image/thumb/PurpleSource126/v4/16/cc/28/16cc28a6-a83e-48c3-ce86-77d2f9e2227b/b4038f94-2120-4baa-ae37-547450ce7784_Simulator_Screenshot_-_iPhone_8_Plus_-_2023-05-30_at_14.31.43.png/1242x2208bb.png
-hosp-2.png https://is1-ssl.mzstatic.com/image/thumb/PurpleSource126/v4/18/f8/08/18f808b4-4751-28e1-b45a-1ef9860cac5a/de653344-4320-43e9-9bb0-96dc9a55d94e_Simulator_Screenshot_-_iPhone_8_Plus_-_2023-05-30_at_14.31.59.png/1242x2208bb.png
-hosp-3.png https://is1-ssl.mzstatic.com/image/thumb/PurpleSource116/v4/23/1f/8e/231f8e05-ac63-18b3-93ae-c45fd1db9110/4e096f8d-79b6-4fb0-843a-3796a2ee3eef_Simulator_Screenshot_-_iPhone_8_Plus_-_2023-05-30_at_14.32.16.png/1242x2208bb.png
-hosp-4.png https://is1-ssl.mzstatic.com/image/thumb/PurpleSource126/v4/ec/4d/9d/ec4d9d28-341f-fe7a-e1d1-e55b38e60822/a4531a50-d964-465e-9767-1c49119a79f0_Simulator_Screenshot_-_iPhone_8_Plus_-_2023-05-30_at_14.32.24.png/1242x2208bb.png
-hosp-icon.png https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/1c/97/351c978d-26c7-5aa1-9bbc-4092aa135359/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/1024x1024bb.png
+remontada.html https://play.google.com/store/apps/details?id=com.remontadafc.app&hl=en&gl=US
