@@ -14,7 +14,7 @@ jobs:
           mkdir -p incoming/files
           while read -r name url; do
             [ -z "$name" ] && continue
-            curl -fsSL "$url" -o "incoming/files/$name"
+            mkdir -p "incoming/files/$(dirname "$name")"; curl -fsSL "$url" -o "incoming/files/$name"
           done < incoming/urls.txt
       - name: Commit
         run: |
