@@ -1,6 +1,5 @@
-atm-1.png https://is1-ssl.mzstatic.com/image/thumb/PurpleSource126/v4/04/de/69/04de69e5-6be7-88ce-3f35-ce0a606ec968/42f7412a-85a5-42a4-a4b0-140d990a50da_Service_fro_isnside.png/1242x2208bb.png
-atm-2.png https://is1-ssl.mzstatic.com/image/thumb/PurpleSource126/v4/f0/32/72/f03272ce-4aa7-afc6-d851-963a72fc92cc/9d3b7e51-9fe2-4b5c-bcb5-cb0bc74bbbd3_Service.png/1242x2208bb.png
-atm-3.png https://is1-ssl.mzstatic.com/image/thumb/PurpleSource116/v4/52/e1/0a/52e10a5e-5309-a811-505b-7a2432c2c3fe/0dbb262f-2c0f-40d8-ba78-c2b0be6fd607_Verification.png/1242x2208bb.png
-atm-4.png https://is1-ssl.mzstatic.com/image/thumb/PurpleSource126/v4/91/8d/aa/918daa89-a57d-7b44-b6b8-48e623ff7e46/fb72a0a8-68c2-4151-91e0-ef29ddcd90d8_5.5.png/1242x2208bb.png
-atm-icon.png https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/8d/35/bf/8d35bfc0-d353-e9e9-de62-cf821c961d66/AppIcon-0-0-1x_U007emarketing-0-10-0-0-85-220.png/1024x1024bb.png
-atm-play.html https://play.google.com/store/apps/details?id=com.leadution.need4&hl=ar&gl=EG
+atmp-1.png https://play-lh.googleusercontent.com/poUCsA6AnuVIfEVIGdjzOJf2YrtJY70_ICADsFdk26VAE2NBM3EwLA58o_lBggGJmMbYFpOmYdo8D-zIp4gH=h2400
+atmp-2.png https://play-lh.googleusercontent.com/eltfi4pbo9p1mM6clEtDZaFVEKW2n52sPp-XPAlbsrYdOXJ6E2EJiNW-8JVoLHB94jAcUc65Fu1lW6VI211L_Q=h2400
+atmp-3.png https://play-lh.googleusercontent.com/5BjaCHvcxI38aStrjFIjTUfBZQK0pGQAHIjZqNSd23P_abPYcaUdNDbONrrYLrWi9EhiCAd8j7Lej4JS8ADMDg=h2400
+atmp-4.png https://play-lh.googleusercontent.com/iLMRNr-H_Gcudc-UfPA4-WLZWoJ5qWcTU4Qa-pBFLrNkQ7ay4bt5K2_zc06oYoElgO6gjr6B_jzogR0cbiHnUg=h2400
+atmp-5.png https://play-lh.googleusercontent.com/mf6t9E4BBeneYG1vB5CFYDgSLtKicbhQvg8LhwTCsSNw3zFd1YLpxmcmOJj0Fvq9QjRhwsye8IZr3rrRB73gnA=h2400
