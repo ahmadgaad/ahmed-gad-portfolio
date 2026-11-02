@@ -23,21 +23,23 @@ export default async function handler(req, res) {
   if (phone && !/^\+?[\d\s().-]{6,30}$/.test(phone))
     return res.status(400).json({ ok: false, error: "That phone number doesn't look right. You can leave it empty." });
 
-  // No Resend key yet → hand the message to the existing Hatchable backend (stores it in the /inbox and emails you).
-  if (!process.env.RESEND_API_KEY) {
+  const fallback = async () => {
     try {
       const f = await fetch(process.env.FALLBACK_API || "https://ahmed-gad-portfolio.hatchable.site/api/contact", {
         method: "POST", headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, phone, company, message }),
       });
       const j = await f.json().catch(() => ({}));
-      if (f.ok && j.ok) return res.json({ ok: true });
-      return res.status(f.status || 502).json({ ok: false, error: j.error || "Couldn't send right now. Please try again or reach me on WhatsApp." });
+      return f.ok && j.ok;
     } catch (e) {
       console.error("fallback failed", e);
-      return res.status(502).json({ ok: false, error: "Couldn't send right now. Please try again or reach me on WhatsApp." });
+      return false;
     }
-  }
+  };
+  const FAIL = { ok: false, error: "Couldn't send right now. Please try again or reach me on WhatsApp." };
+
+  // No Resend key yet → hand the message to the existing Hatchable backend (stores it in the /inbox and emails you).
+  if (!process.env.RESEND_API_KEY) return (await fallback()) ? res.json({ ok: true }) : res.status(502).json(FAIL);
 
   const digits = phone.replace(/\D/g, "");
   const rows = [["Name", esc(name)], ["Email", `<a href="mailto:${esc(email)}">${esc(email)}</a>`]];
@@ -61,9 +63,9 @@ export default async function handler(req, res) {
     }),
   });
   if (!r.ok) {
-    const detail = await r.text();
-    console.error("resend failed", r.status, detail);
-    return res.status(502).json({ ok: false, error: "Couldn't send right now. Please try again or reach me on WhatsApp.", detail: `${r.status} ${detail}`.slice(0, 300) }); // TODO remove detail after debugging
+    console.error("resend failed", r.status, await r.text()); // visible in Vercel → Logs only, never sent to the visitor
+    // Resend rejected it (e.g. unverified domain) → don't lose the message, use the Hatchable backend instead.
+    return (await fallback()) ? res.json({ ok: true }) : res.status(502).json(FAIL);
   }
   res.json({ ok: true });
 }
