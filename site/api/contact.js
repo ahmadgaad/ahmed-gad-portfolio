@@ -23,6 +23,22 @@ export default async function handler(req, res) {
   if (phone && !/^\+?[\d\s().-]{6,30}$/.test(phone))
     return res.status(400).json({ ok: false, error: "That phone number doesn't look right. You can leave it empty." });
 
+  // No Resend key yet → hand the message to the existing Hatchable backend (stores it in the /inbox and emails you).
+  if (!process.env.RESEND_API_KEY) {
+    try {
+      const f = await fetch(process.env.FALLBACK_API || "https://ahmed-gad-portfolio.hatchable.site/api/contact", {
+        method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, phone, company, message }),
+      });
+      const j = await f.json().catch(() => ({}));
+      if (f.ok && j.ok) return res.json({ ok: true });
+      return res.status(f.status || 502).json({ ok: false, error: j.error || "Couldn't send right now. Please try again or reach me on WhatsApp." });
+    } catch (e) {
+      console.error("fallback failed", e);
+      return res.status(502).json({ ok: false, error: "Couldn't send right now. Please try again or reach me on WhatsApp." });
+    }
+  }
+
   const digits = phone.replace(/\D/g, "");
   const rows = [["Name", esc(name)], ["Email", `<a href="mailto:${esc(email)}">${esc(email)}</a>`]];
   if (phone) rows.push(["Phone", `<a href="tel:${esc(phone.replace(/[^\d+]/g, ""))}">${esc(phone)}</a> · <a href="https://wa.me/${digits}">WhatsApp</a>`]);
