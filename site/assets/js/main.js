@@ -217,15 +217,22 @@ if (window.gsap && window.ScrollTrigger && !reduce) {
   // progress bar
   gsap.to('#progress', { scaleX: 1, ease: 'none', scrollTrigger: { start: 0, end: 'max', scrub: .3 } });
 
-  // hero intro
-  const intro = gsap.timeline({ defaults: { ease: 'expo.out' } });
-  intro.from('nav', { y: -80, opacity: 0, duration: 1.2 })
-       .from('.hero .tag', { y: 20, opacity: 0, duration: 1 }, '-=.9')
-       .from('.hero h1 .line > span', { yPercent: 110, rotate: 4, duration: 1.4, stagger: .12 }, '-=.9')
-       .from('.hero .fade', { y: 30, opacity: 0, duration: 1.2, stagger: .12 }, '-=1')
-       .from('#phone', { y: 120, rotateY: -35, rotateX: 15, opacity: 0, duration: 1.8 }, '-=1.4')
-       .from('.ico', { scale: 0, opacity: 0, duration: .8, stagger: .06, ease: 'back.out(2)' }, '-=1')
-       .from('.scroll-hint', { opacity: 0, duration: 1 }, '-=.6');
+  // hero intro: waits for the display font (max 700ms) so the headline never re-flows mid-animation
+  const startIntro = () => {
+    document.documentElement.classList.remove('pre'); // CSS hid the hero; GSAP takes over from the same state in this same frame
+    const intro = gsap.timeline({ defaults: { ease: 'expo.out' } });
+    intro.from('nav', { y: -80, opacity: 0, duration: 1.2 })
+         .from('.hero .tag', { y: 20, opacity: 0, duration: 1 }, '-=.9')
+         .from('.hero h1 .line > span', { yPercent: 110, rotate: 4, duration: 1.4, stagger: .12 }, '-=.9')
+         .from('.hero .fade', { y: 30, opacity: 0, duration: 1.2, stagger: .12 }, '-=1')
+         .from('#phone', { y: 120, rotateY: -35, rotateX: 15, opacity: 0, duration: 1.8 }, '-=1.4')
+         .from('.ico', { scale: 0, opacity: 0, duration: .8, stagger: .06, ease: 'back.out(2)' }, '-=1')
+         .from('.scroll-hint', { opacity: 0, duration: 1 }, '-=.6');
+  };
+  Promise.race([
+    (document.fonts && document.fonts.load ? document.fonts.load('800 1em Unbounded') : Promise.resolve()),
+    new Promise(r => setTimeout(r, 700))
+  ]).then(startIntro, startIntro);
 
   // floating blobs
   gsap.to('.hero .b1', { x: 120, y: 80, duration: 9, repeat: -1, yoyo: true, ease: 'sine.inOut' });
@@ -436,6 +443,7 @@ if (window.gsap && window.ScrollTrigger && !reduce) {
 
   addEventListener('load', () => { ScrollTrigger.sort(); ScrollTrigger.refresh(); });
 } else {
+  document.documentElement.classList.remove('pre');
   document.querySelectorAll('#statement .w').forEach(w => w.style.opacity = 1);
   document.getElementById('cursor').style.display = 'none';
 }
