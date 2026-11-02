@@ -1,0 +1,4 @@
+tajer-1.png https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/87/4a/bf/874abf84-e9f8-ffe3-5abe-de7922a651de/Simulator_Screenshot_-_iPhone_16_Pro_-_2025-11-09_at_01.22.40.png/1206x2622bb.png
+tajer-2.png https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/36/0b/25/360b25f1-504d-cac5-ec85-3457c699ba79/Simulator_Screenshot_-_iPhone_16_Pro_-_2025-11-09_at_01.22.44.png/1206x2622bb.png
+tajer-3.png https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/e8/34/f4/e834f489-2a9c-593c-b746-e9702de95d57/Simulator_Screenshot_-_iPhone_16_Pro_-_2025-11-09_at_01.22.59__U00281_U0029.png/1206x2622bb.png
+tajer-icon.png https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/70/3f/7b/703f7b1a-c707-b781-b373-63e04742e995/AppIcon-0-0-1x_U007emarketing-0-9-0-85-220.png/1024x1024bb.png

@@ -1,0 +1,25 @@
+name: fetch-assets
+on:
+  push:
+    paths: ['incoming/urls.txt']
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download
+        run: |
+          mkdir -p incoming/files
+          while read -r name url; do
+            [ -z "$name" ] && continue
+            curl -fsSL "$url" -o "incoming/files/$name"
+          done < incoming/urls.txt
+      - name: Commit
+        run: |
+          git config user.name "assets-bot"
+          git config user.email "assets-bot@users.noreply.github.com"
+          git add incoming/files
+          git commit -m "Fetch assets" || exit 0
+          git push
