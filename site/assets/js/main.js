@@ -13,18 +13,18 @@ const apps = [
 const grads = [['#c8ff3e','#3ee6ff'],['#8b5cff','#3ee6ff'],['#ffb03e','#ff5e7a'],['#3ee6ff','#4b7bff'],['#ff5e7a','#8b5cff'],['#7dff9e','#c8ff3e'],['#ffd23e','#ff8a3e'],['#c48bff','#ff7ad9'],['#3effc1','#3ea7ff'],['#8e95d6','#e9a23b'],['#ff9a3e','#c8ff3e']];
 const first = s => [...s.trim()][0];
 const storeIcons = new Set(['6451352706','6806666728','6758548567','6814884062','6478984773','6754807870','6473259741','1626286749','6459831887']);
-const iconBg = (a,i) => a.iconFit ? `#fff url(/img/icons/${a.id}.jpg) center/${typeof a.iconFit === 'string' ? a.iconFit : '66%'} no-repeat` : storeIcons.has(a.id) ? `url(/img/icons/${a.id}.jpg) center/cover` : `linear-gradient(135deg,${grads[i][0]},${grads[i][1]})`;
+const iconBg = (a,i) => a.iconFit ? `#fff url(img/icons/${a.id}.jpg) center/${typeof a.iconFit === 'string' ? a.iconFit : '66%'} no-repeat` : storeIcons.has(a.id) ? `url(img/icons/${a.id}.jpg) center/cover` : `linear-gradient(135deg,${grads[i][0]},${grads[i][1]})`;
 const iconTxt = a => storeIcons.has(a.id) ? '' : first(a.name);
 document.getElementById('screen').innerHTML = '<div class="island"></div>' + apps.map((a,i)=>`<div class="ico"><b class="${a.ar?'ar':''}" style="background:${iconBg(a,i)}">${iconTxt(a)}</b><span class="${a.ar?'ar':''}">${a.name}</span></div>`).join('');
 const featured = `
   <a class="app featured" href="#case">
     <div class="count">Featured</div><span class="feat">Case study ↓</span>
-    <div class="art photo"><picture><source srcset="/img/sport-oasis-hd.avif" type="image/avif"><img src="/img/sport-oasis.webp" alt="Sport Oasis app screens" decoding="async"></picture></div>
+    <div class="art photo"><picture><source srcset="img/sport-oasis-hd.avif" type="image/avif"><img src="img/sport-oasis.webp" alt="Sport Oasis app screens" decoding="async"></picture></div>
     <div class="meta"><div><h4>Sport Oasis</h4><small>Sports · Maps · Reels</small></div><span class="go">↗</span></div>
   </a>`;
 document.getElementById('track').innerHTML = featured + apps.map((a,i)=>`
   <div class="app${a.img?' poster':''}">
-    ${a.img ? `<div class="art photo"><picture><source srcset="/img/${a.img}.avif?v=6" type="image/avif"><img src="/img/${a.img}.webp?v=6" alt="${a.name} app screens" decoding="async"></picture></div>` : `<div class="art" style="background:linear-gradient(135deg,${grads[i][0]},${grads[i][1]})">${storeIcons.has(a.id) ? `<img class="aicon${a.iconFit?' fit':''}" src="/img/icons/${a.id}.jpg" alt="${a.name} icon" loading="lazy">` : `<b class="${a.ar?'ar':''}">${first(a.name)}</b>`}</div>`}
+    ${a.img ? `<div class="art photo"><picture><source srcset="img/${a.img}.avif?v=6" type="image/avif"><img src="img/${a.img}.webp?v=6" alt="${a.name} app screens" decoding="async"></picture></div>` : `<div class="art" style="background:linear-gradient(135deg,${grads[i][0]},${grads[i][1]})">${storeIcons.has(a.id) ? `<img class="aicon${a.iconFit?' fit':''}" src="img/icons/${a.id}.jpg" alt="${a.name} icon" loading="lazy">` : `<b class="${a.ar?'ar':''}">${first(a.name)}</b>`}</div>`}
     <div class="meta"><div><h4 class="${a.ar?'ar':''}" ${a.ar?'dir="rtl"':''}>${a.name}</h4><small>${a.tag}</small>
       <div class="stores">
         ${a.noios ? '' : `<a class="store" href="https://apps.apple.com/eg/app/id${a.id}" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M16.37 12.6c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.78-3.32-1.8-1.41-.14-2.76.83-3.48.83-.72 0-1.82-.81-3-.79-1.54.02-2.96.9-3.76 2.27-1.6 2.78-.41 6.9 1.15 9.16.76 1.1 1.67 2.34 2.86 2.3 1.15-.05 1.58-.74 2.97-.74s1.78.74 2.99.72c1.24-.02 2.02-1.12 2.77-2.23.87-1.28 1.23-2.52 1.25-2.58-.03-.01-2.4-.92-2.42-3.66zM14.1 5.84c.63-.77 1.06-1.83.94-2.89-.91.04-2.02.61-2.67 1.37-.58.67-1.1 1.76-.96 2.8 1.02.08 2.06-.52 2.69-1.28z"/></svg>App Store</a>`}
@@ -40,8 +40,8 @@ const clients = [
   {f:'dubisign', n:'Dubisign', url:'https://www.linkedin.com/company/dubisign/'}
 ];
 const logoHTML = clients.map(c => c.url
-  ? `<a class="clogo" href="${c.url}" target="_blank" rel="noopener" title="${c.n}"><img src="/img/logos/${c.f}.webp" alt="${c.n}"></a>`
-  : `<div class="clogo" title="${c.n}"><img src="/img/logos/${c.f}.webp" alt="${c.n}"></div>`).join('');
+  ? `<a class="clogo" href="${c.url}" target="_blank" rel="noopener" title="${c.n}"><img src="img/logos/${c.f}.webp" alt="${c.n}"></a>`
+  : `<div class="clogo" title="${c.n}"><img src="img/logos/${c.f}.webp" alt="${c.n}"></div>`).join('');
 document.getElementById('mtrack').innerHTML = logoHTML.repeat(4);
 // while the page is scrolling, hovering a logo shouldn't pause the strip — only once scrolling stops
 (() => {
@@ -254,7 +254,7 @@ if (window.gsap && window.ScrollTrigger && !reduce) {
     function render(i) {
       const a = apps[i];
       av.innerHTML = `<div class="hd"><b style="background:${g(i)}">${first(a.name)}</b><div><h5 ${a.ar ? 'dir="rtl"' : ''}>${a.name}</h5><small>${a.tag}</small></div></div>`
-        + (a.img ? `<div class="shot"><img src="/img/${a.img}.webp?v=6" alt="${a.name}"></div>` : `<div class="shot" style="background:${g(i)}"><b>${first(a.name)}</b></div>`)
+        + (a.img ? `<div class="shot"><img src="img/${a.img}.webp?v=6" alt="${a.name}"></div>` : `<div class="shot" style="background:${g(i)}"><b>${first(a.name)}</b></div>`)
         + `<div class="st"><span>App Store</span>${a.play ? '<span>Google Play</span>' : ''}</div>`
         + `<a class="cta" href="#work">See the project ↗</a><i class="home"></i>`;
       av.querySelector('.home').addEventListener('mouseenter', close);
