@@ -1,1 +1,7 @@
-remontada.html https://play.google.com/store/apps/details?id=com.remontadafc.app&hl=en&gl=US
+rem-1.png https://play-lh.googleusercontent.com/CfnJKwmjk9x4Ui4cm76fAWJlUgUj8Ey_2qiEp6ENCmxh-9d1ERaZQWvoGPTdR9i1V2PThSEJRwxV-_LvhxAY=h2400
+rem-2.png https://play-lh.googleusercontent.com/Jp4zqZihZJD_fLGhyh9MNZzyfwds_z7ZFVTX4ehUybvF9ThdgNHr4A-wYh1JhiGTBotd2ZUn12-92y0qK2Q90Ls=h2400
+rem-3.png https://play-lh.googleusercontent.com/iJTkaFcmr2mjJRl-mJ6peS0SQBhNnpXajHpZ0Zk3GQqlk7tYXiH5ow_HMfB5VCA_HYXF1DQFHn9B9kqVEaTT=h2400
+rem-4.png https://play-lh.googleusercontent.com/gCGbAEB-OLcfQ5LeVs4yV1h7oEpw7IRmM-YgPWWIu3L2a3-Px814P-Xgto2Nd_Z55U4tvHrUwbb-RG-3fw7-Jl8=h2400
+rem-5.png https://play-lh.googleusercontent.com/0ZU97_m9GSTVBvImY9NqJoxPXA9boglHVR4IgnwRXBU-FVIDUUZK-lAVgOdjzHtToKeJfwi3CtrMt9U3BwAAoGs=h2400
+rem-6.png https://play-lh.googleusercontent.com/mDJOH8n5lNMeWaAPZAwebmthnYyi1LyRMZzR1DKrkBb7K30Kn3z4qFsppHzF2Vo-da3tnOgg9_79U8_6hfgBow=h2400
+rem-icon.png https://play-lh.googleusercontent.com/mRA2ZM_95sJBy0_XecMqcqQFpPioE6eCdJ059syJ0iLFOZPp5nGKuQpVAI-ahsAzbHw2f74p5d9A8J-EJFrOLQ=s1024
