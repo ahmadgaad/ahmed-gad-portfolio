@@ -61,8 +61,9 @@ export default async function handler(req, res) {
     }),
   });
   if (!r.ok) {
-    console.error("resend failed", r.status, await r.text());
-    return res.status(502).json({ ok: false, error: "Couldn't send right now. Please try again or reach me on WhatsApp." });
+    const detail = await r.text();
+    console.error("resend failed", r.status, detail);
+    return res.status(502).json({ ok: false, error: "Couldn't send right now. Please try again or reach me on WhatsApp.", detail: `${r.status} ${detail}`.slice(0, 300) }); // TODO remove detail after debugging
   }
   res.json({ ok: true });
 }
